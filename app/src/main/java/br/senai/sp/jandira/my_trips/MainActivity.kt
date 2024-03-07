@@ -113,7 +113,7 @@ fun Greeting() {
                              )
                 },
                 shape = RoundedCornerShape(15.dp),
-                colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0)),
+                colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
 
             )
 
@@ -123,6 +123,7 @@ fun Greeting() {
                 label = {
                     Text(text = "Password",
                         fontWeight = FontWeight.Light)
+
                 },
                 leadingIcon = {
                               Icon(
@@ -191,10 +192,27 @@ fun Greeting() {
     }
 }
 
+
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
     My_tripsTheme {
         Greeting()
+
     }
 }
+@Composable
+fun cadastro(){
+
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun cadastroPreview() {
+    My_tripsTheme {
+        cadastro()
+
+    }
+}
+
+
