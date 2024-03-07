@@ -133,7 +133,7 @@ fun Greeting() {
                               )
                 },
                 shape = RoundedCornerShape(15.dp),
-                colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0)),
+                colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
                 modifier = Modifier.width(350.dp)
             )
 
