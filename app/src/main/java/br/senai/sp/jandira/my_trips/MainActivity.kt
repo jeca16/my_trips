@@ -203,7 +203,27 @@ fun GreetingPreview() {
 }
 @Composable
 fun cadastro(){
+    Surface {
+        Column (modifier =  Modifier
+            .fillMaxHeight()){
+            Row (modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End){
+                Card (colors = CardDefaults.cardColors(containerColor = Color(0xFFCF06F0)),
+                    modifier = Modifier
+                        .width(130.dp)
+                        .height(40.dp),
+                    shape = RoundedCornerShape(
+                        bottomStart = 15.dp
+                    )
+                ){
+                }
+            }
 
+            Column (){
+                Text(text = "Sign Up")
+            }
+        }
+    }
 }
 
 @Preview(showBackground = true, showSystemUi = true)
