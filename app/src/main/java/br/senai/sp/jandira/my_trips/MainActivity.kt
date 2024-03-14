@@ -3,7 +3,10 @@ package br.senai.sp.jandira.my_trips
 import android.graphics.drawable.Icon
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.R
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,13 +20,18 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.PhoneAndroid
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -34,6 +42,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -165,7 +175,7 @@ fun Greeting() {
                         fontWeight = FontWeight.Light,
                         color = Color(0xFFA09C9C),
                         fontSize = 15.sp)
-                    Text(text = "Sign in",
+                    Text(text = "Sign up",
                         color = Color(0xFFCF06F0),
                         fontWeight = FontWeight.Bold,
                         fontSize = 15.sp
@@ -203,9 +213,13 @@ fun GreetingPreview() {
 }
 @Composable
 fun cadastro(){
-    Surface {
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+    ){
         Column (modifier =  Modifier
-            .fillMaxHeight()){
+            .fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceBetween){
             Row (modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.End){
                 Card (colors = CardDefaults.cardColors(containerColor = Color(0xFFCF06F0)),
@@ -219,8 +233,162 @@ fun cadastro(){
                 }
             }
 
-            Column (){
-                Text(text = "Sign Up")
+            Column (modifier = Modifier
+                .fillMaxWidth()
+                .padding(30.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,){
+                Text(text = "Sign Up",
+                    color = Color(0xFFCF06F0),
+                    fontWeight = FontWeight.Black,
+                    fontSize = 25.sp)
+                Text(text = "Create a new account",
+                    color = Color(0xFFA09C9C),
+                    fontWeight = FontWeight.Light,
+                    fontSize = 13.sp,
+                    modifier = Modifier.padding(bottom = 20.dp)
+                )
+                Card (shape = CircleShape,
+                    modifier = Modifier.size(width = 80.dp, height = 80.dp),
+                    border = BorderStroke(width = 1.dp, color = Color(0xFFCF06F0))
+
+                ){
+                    Image(painter = painterResource(id = br.senai.sp.jandira.my_trips.R.drawable.perfil),
+                        contentDescription = "",
+                        modifier = Modifier.fillMaxSize())
+                }
+
+            }
+            Column (modifier = Modifier
+                .fillMaxWidth()
+                .height(280.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceBetween
+                ){
+                OutlinedTextField(value = "",
+                    onValueChange = {},
+                    label = {
+                        Text(text = "username",
+                            fontWeight = FontWeight.Light,)
+                    },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Person,
+                            contentDescription = "",
+                            tint = Color(0xFFCF06F0)
+                        )
+                    },
+                    shape = RoundedCornerShape(18.dp),
+                    colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
+                    modifier = Modifier.width(350.dp))
+
+
+                OutlinedTextField(value = "",
+                    onValueChange = {},
+                    label = {
+                        Text(text = "phone",
+                            fontWeight = FontWeight.Light)
+                    },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.PhoneAndroid,
+                            contentDescription = "",
+                            tint = Color(0xFFCF06F0)
+                        )
+                    },
+                    shape = RoundedCornerShape(18.dp),
+                    colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
+                    modifier = Modifier.width(350.dp))
+
+                OutlinedTextField(value = "",
+                    onValueChange = {},
+                    label = {
+                        Text(text = "E-mail",
+                            fontWeight = FontWeight.Light)
+                    },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Email,
+                            contentDescription = "",
+                            tint = Color(0xFFCF06F0)
+                        )
+                    },
+                    shape = RoundedCornerShape(18.dp),
+                    colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
+                    modifier = Modifier.width(350.dp))
+
+
+                OutlinedTextField(value = "" ,
+                    onValueChange = {},
+                    label = {
+                        Text(text = "password",
+                            fontWeight = FontWeight.Light)
+                    },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Lock,
+                            contentDescription = "",
+                            tint = Color(0xFFCF06F0)
+                        )
+                    },
+                    shape = RoundedCornerShape(18.dp),
+                    colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
+                    modifier = Modifier.width(350.dp))
+            }
+            Row (verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start,
+                modifier = Modifier.padding(start = 13.dp)){
+
+                Checkbox(checked = false,
+                    onCheckedChange = {},
+                    colors = CheckboxDefaults.colors(checkedColor = Color(0xFFCF06F0), uncheckedColor = Color(0xFFCF06F0)))
+                Text(text = "over 18", color = Color.Black)
+            }
+
+            Row (horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth()){
+                Button(onClick = { /*TODO*/ },
+                    modifier = Modifier
+                        .padding(top = 20.dp)
+                        .width(320.dp)
+                        .height(50.dp),
+                    colors = ButtonDefaults.buttonColors(Color(0xFFCF06F0)),
+                    shape = RoundedCornerShape(15.dp),
+                ) {
+                    Text(text = "CREATE ACCOUNT",
+                        fontWeight = FontWeight.Black,
+                        fontSize = 15.sp
+                    )
+                }
+            }
+
+            Row (modifier = Modifier
+                .fillMaxWidth()
+                .padding(end = 40.dp),
+                horizontalArrangement = Arrangement.End
+            ){
+                Text(text = "Already have an account?",
+                    fontWeight = FontWeight.Light,
+                    color = Color(0xFFA09C9C),
+                    fontSize = 15.sp)
+                Text(text = "Sign in",
+                    color = Color(0xFFCF06F0),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp
+                )
+            }
+
+            Row (modifier = Modifier.fillMaxWidth()){
+                Card (colors = CardDefaults.cardColors(containerColor = Color(0xFFCF06F0)),
+                    modifier = Modifier
+                        .width(130.dp)
+                        .height(40.dp),
+                    shape = RoundedCornerShape(
+                        topEnd = 15.dp
+                    )
+                ){
+
+                }
             }
         }
     }

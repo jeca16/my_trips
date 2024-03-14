@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/user"
+        android:icon="@drawable/profile"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/user"
+        android:roundIcon="@drawable/profile"
         android:supportsRtl="true"
         android:theme="@style/Theme.My_trips"
         tools:targetApi="31">
