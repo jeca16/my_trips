@@ -7,6 +7,7 @@ import androidx.activity.R
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,12 +18,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.AddLocation
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.PhoneAndroid
@@ -450,8 +454,69 @@ fun cadastroPreview() {
 
 @Composable
 fun home(){
-    Surface {
-        
+    Surface (modifier = Modifier
+        .fillMaxWidth()
+        .background(color = Color.Blue)
+    ){
+        Image(painter = painterResource(id = br.senai.sp.jandira.my_trips.R.drawable.imagemparis),
+            contentDescription = "imagem da Torre Eiffel",
+            contentScale = ContentScale.Crop)
+
+        Column (modifier = Modifier.padding(top = 20.dp, end = 20.dp, start = 20.dp),
+            horizontalAlignment = Alignment.End,
+            ){
+            Image(painter = painterResource(id = br.senai.sp.jandira.my_trips.R.drawable.userimage),
+                contentDescription = "imagem de user",
+                modifier = Modifier
+                    .height(50.dp)
+                    .width(50.dp))
+
+            Text(text = "Susanna Hoffs",
+                fontSize = 13.sp,
+                color = Color.White,
+            )
+        }
+        Column (modifier = Modifier
+            .padding(start = 20.dp, top = 100.dp, end = 20.dp)
+            .height(100.dp),
+            horizontalAlignment = Alignment.Start,
+            verticalArrangement = Arrangement.Bottom) {
+
+            Row (verticalAlignment = Alignment.Bottom){
+
+                Icon(imageVector = Icons.Default.LocationOn,
+                    contentDescription = "",
+                    tint = Color.White )
+                Text(text = "You're in Paris",
+                    fontSize = 10.sp,
+                    color = Color.White
+                )
+            }
+
+            Text(text = " My Trips",
+                fontWeight = FontWeight.Black,
+                fontSize = 20.sp,
+                color = Color.White
+            )
+        }
+
+        Row (verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .height(250.dp)
+                .padding(top = 210.dp, start = 20.dp)){
+            Text(text = "Categories",
+                fontSize = 14.sp,
+                color = Color(0xFF565454)
+            )
+        }
+        LazyRow{
+            items(8){
+                Card (modifier = Modifier.height(30.dp)) {
+
+                }
+            }
+        }
+
     }
 }
 
