@@ -39,6 +39,8 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -60,7 +62,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting()
+                    home()
                 }
             }
         }
@@ -69,6 +71,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting() {
+    
+    var emailState = remember {
+        mutableStateOf("")
+    }
+
+    var senhaState = remember {
+        mutableStateOf("")
+    }
+
     Column (
         modifier =  Modifier
             .fillMaxHeight()
@@ -105,8 +116,10 @@ fun Greeting() {
             verticalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier.fillMaxWidth()){
             OutlinedTextField(
-                value = "",
-                onValueChange = {},
+                value = emailState.value,
+                onValueChange = {
+                                emailState.value = it
+                },
                 modifier = Modifier
                     .padding(20.dp)
                     .width(350.dp),
@@ -128,8 +141,10 @@ fun Greeting() {
             )
 
             OutlinedTextField(
-                value = "",
-                onValueChange = {},
+                value = senhaState.value,
+                onValueChange = {
+                                senhaState.value = it
+                },
                 label = {
                     Text(text = "Password",
                         fontWeight = FontWeight.Light)
@@ -213,6 +228,23 @@ fun GreetingPreview() {
 }
 @Composable
 fun cadastro(){
+
+    var usernameState = remember {
+        mutableStateOf("")
+    }
+    var phoneState = remember {
+        mutableStateOf("")
+    }
+    var emailState = remember {
+        mutableStateOf("")
+    }
+    var senhaState = remember {
+        mutableStateOf("")
+    }
+    var checkboxState = remember {
+        mutableStateOf(false)
+    }
+
     Surface(
         modifier = Modifier
             .fillMaxSize()
@@ -264,8 +296,10 @@ fun cadastro(){
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceBetween
                 ){
-                OutlinedTextField(value = "",
-                    onValueChange = {},
+                OutlinedTextField(value = usernameState.value,
+                    onValueChange = {
+                                    usernameState.value = it
+                    },
                     label = {
                         Text(text = "username",
                             fontWeight = FontWeight.Light,)
@@ -282,8 +316,10 @@ fun cadastro(){
                     modifier = Modifier.width(350.dp))
 
 
-                OutlinedTextField(value = "",
-                    onValueChange = {},
+                OutlinedTextField(value = phoneState.value,
+                    onValueChange = {
+                                    phoneState.value = it
+                    },
                     label = {
                         Text(text = "phone",
                             fontWeight = FontWeight.Light)
@@ -299,8 +335,10 @@ fun cadastro(){
                     colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
                     modifier = Modifier.width(350.dp))
 
-                OutlinedTextField(value = "",
-                    onValueChange = {},
+                OutlinedTextField(value = emailState.value,
+                    onValueChange = {
+                        emailState.value = it
+                                    },
                     label = {
                         Text(text = "E-mail",
                             fontWeight = FontWeight.Light)
@@ -317,8 +355,10 @@ fun cadastro(){
                     modifier = Modifier.width(350.dp))
 
 
-                OutlinedTextField(value = "" ,
-                    onValueChange = {},
+                OutlinedTextField(value = senhaState.value ,
+                    onValueChange = {
+                                    senhaState.value = it
+                    },
                     label = {
                         Text(text = "password",
                             fontWeight = FontWeight.Light)
@@ -338,8 +378,10 @@ fun cadastro(){
                 horizontalArrangement = Arrangement.Start,
                 modifier = Modifier.padding(start = 13.dp)){
 
-                Checkbox(checked = false,
-                    onCheckedChange = {},
+                Checkbox(checked = checkboxState.value,
+                    onCheckedChange = {
+                                      checkboxState.value = it
+                    },
                     colors = CheckboxDefaults.colors(checkedColor = Color(0xFFCF06F0), uncheckedColor = Color(0xFFCF06F0)))
                 Text(text = "over 18", color = Color.Black)
             }
@@ -404,3 +446,23 @@ fun cadastroPreview() {
 }
 
 
+
+
+@Composable
+fun home(){
+    Surface {
+        
+    }
+}
+
+
+
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun homePreview() {
+    My_tripsTheme {
+        home()
+
+    }
+}
