@@ -2,6 +2,7 @@ package br.senai.sp.jandira.my_trips.telas
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -61,6 +62,10 @@ fun TelaCadastro(controleNavegacao: NavHostController) {
         mutableStateOf(false)
     }
 
+    var mensagemErroState = remember {
+        mutableStateOf("")
+    }
+
     Surface(
         modifier = Modifier
             .fillMaxSize()
@@ -100,9 +105,11 @@ fun TelaCadastro(controleNavegacao: NavHostController) {
                     border = BorderStroke(width = 1.dp, color = Color(0xFFCF06F0))
 
                 ){
-                    Image(painter = painterResource(id = R.drawable.perfil),
-                        contentDescription = "",
-                        modifier = Modifier.fillMaxSize())
+                    Surface (modifier = Modifier.fillMaxSize()) {
+                        Image(painter = painterResource(id = R.drawable.perfil),
+                            contentDescription = "",
+                            modifier = Modifier.fillMaxSize())
+                    }
                 }
 
             }
@@ -205,7 +212,14 @@ fun TelaCadastro(controleNavegacao: NavHostController) {
             Row (horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()){
-                Button(onClick = { /*TODO*/ },
+                Button(onClick = {
+                    if (usernameState.value== " " && phoneState.value == "" && emailState.value == "" && senhaState.value == "" && checkboxState.value== true){
+                        mensagemErroState.value = ""
+                        controleNavegacao.navigate("home")
+                    }else{
+                        mensagemErroState.value = "usuario ou senha incorretos!!"
+                    }
+                },
                     modifier = Modifier
                         .padding(top = 20.dp)
                         .width(320.dp)
@@ -232,7 +246,8 @@ fun TelaCadastro(controleNavegacao: NavHostController) {
                 Text(text = "Sign in",
                     color = Color(0xFFCF06F0),
                     fontWeight = FontWeight.Bold,
-                    fontSize = 15.sp
+                    fontSize = 15.sp,
+                    modifier = Modifier.clickable { controleNavegacao.navigate("login") }
                 )
             }
 

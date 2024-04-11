@@ -110,7 +110,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                     },
                     shape = RoundedCornerShape(15.dp),
                     colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
-
+                    maxLines = 1
                     )
 
                 OutlinedTextField(
@@ -132,7 +132,8 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                     },
                     shape = RoundedCornerShape(15.dp),
                     colors = OutlinedTextFieldDefaults.colors(unfocusedBorderColor = Color(0xFFCF06F0), focusedBorderColor = Color(0xFFCF06F0)),
-                    modifier = Modifier.width(350.dp)
+                    modifier = Modifier.width(350.dp),
+                    maxLines = 1
                 )
 
                 Text(text = mensagemErroState.value,
