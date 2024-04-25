@@ -16,7 +16,7 @@ class ViagemRepositorio {
             descricao = "Londres, capital da Inglaterra e do Reino Unido, é uma cidade do século 21 com uma história que remonta à era romana.",
             dataChegada = LocalDate.of(2019, 2, 18),
             dataPartida = LocalDate.of(2019, 2, 21),
-            imagem = painterResource(id = R.drawable.london)
+            imagem = painterResource(id = R.drawable.londres)
         )
 
         val Franca = Viagem(

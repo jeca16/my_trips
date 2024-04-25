@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -42,6 +43,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.my_trips.R
+import br.senai.sp.jandira.my_trips.repositorio.CategoriaRepositorio
+import br.senai.sp.jandira.my_trips.repositorio.ViagemRepositorio
+import br.senai.sp.jandira.my_trips.utilitarios.encurtadorDeDatas
 
 @Composable
 fun TelaHome(controleNavegacao: NavHostController) {
@@ -132,8 +136,9 @@ var pesquisaState = remember{
                     text = "Categories",
                     fontSize = 17.sp
                 )
+                val categorias = CategoriaRepositorio().listarTodasCategorias()
                 LazyRow {
-                    items(20) {
+                    items(categorias) {
                         Card(
                             modifier = Modifier
                                 .width(150.dp)
@@ -146,13 +151,12 @@ var pesquisaState = remember{
                                 verticalArrangement = Arrangement.Center,
                                 modifier = Modifier.fillMaxSize()
                             ) {
-                                Icon(
-                                    imageVector = Icons.Default.LocationOn,
-                                    contentDescription = "locais",
-                                    tint = Color.White,
+                                Image(painter = if (it.icone == null) painterResource(id = R.drawable.novetor) else it.icone!!,
+                                    contentDescription = "",
+                                    modifier = Modifier.width(35.dp).height(35.dp)
                                 )
                                 Text(
-                                    text = "Montain",
+                                    text = "${it.nome}",
                                     color = Color.White,
                                     fontSize = 15.sp,
 
@@ -193,9 +197,10 @@ var pesquisaState = remember{
 
                 Text(text = "Past trips",
                     fontSize = 18.sp,)
+                val viagens = ViagemRepositorio().listarTodasAsViagens()
 
                 LazyColumn{
-                    items(20){
+                    items(viagens){
                         Card(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -205,32 +210,39 @@ var pesquisaState = remember{
                             elevation = CardDefaults.cardElevation(7.dp),
                             colors = CardDefaults.cardColors(containerColor = Color.White)
                         ){
-                            Surface (modifier = Modifier.fillMaxSize()) {
-                                Image(painter = painterResource(id = R.drawable.london),
-                                    contentDescription = "London",
+                            Surface (modifier = Modifier
+                                .height(120.dp)
+                                .width(390.dp),
+                                shape = RoundedCornerShape(28.dp),
+                                color = Color.White
+                            ) {
+                                Image(painter = if (it.imagem == null) painterResource(id = R.drawable.noimage) else it.imagem!!,
+                                    contentDescription = "",
                                     modifier = Modifier.padding(end = 5.dp, start = 5.dp, top = 5.dp),
-                                    Alignment.TopCenter)
+                                    Alignment.Center,
+                                    contentScale = ContentScale.Crop)
+                            }
 
-                                Column (verticalArrangement = Arrangement.Bottom,
+                            Column (verticalArrangement = Arrangement.Center,
+                                modifier = Modifier
+                                    .height(180.dp)
+                                    .padding(bottom = 5.dp, start = 5.dp)){
+                                Text(text = "${it.destino}, ${it.dataChegada.year}",
+                                    color = Color(0xFFCF06F0),
+                                    fontSize = 20.sp
+                                )
+
+                                Text(text = it.descricao,
+                                    color = Color(0xFF8B898B),
+                                    fontSize = 10.sp
+                                )
+                                Row ( horizontalArrangement = Arrangement.End,
                                     modifier = Modifier
-                                        .height(180.dp)
-                                        .padding(bottom = 5.dp, start = 10.dp)){
-                                    Text(text = "London, 2019",
+                                        .fillMaxWidth()
+                                        .padding(end = 15.dp)){
+                                    Text(text = encurtadorDeDatas(it.dataChegada, it.dataPartida),
                                         color = Color(0xFFCF06F0),
-                                        fontSize = 20.sp
-                                    )
-
-                                    Text(text = "London is the capital and largest city of  the United Kingdom, with a population of just under 9 million.",
-                                        color = Color(0xFF8B898B),
-                                        fontSize = 10.sp
-                                    )
-                                     Row ( horizontalArrangement = Arrangement.End,
-                                         modifier = Modifier
-                                             .fillMaxWidth()
-                                             .padding(end = 15.dp)){
-                                         Text(text = "18 Feb - 21 Feb",
-                                             color = Color(0xFFCF06F0))
-                                     }
+                                        fontSize = 13.sp)
                                 }
                             }
 

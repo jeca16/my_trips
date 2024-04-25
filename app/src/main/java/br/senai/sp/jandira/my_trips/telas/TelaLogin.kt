@@ -167,7 +167,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
 
                     Row (modifier = Modifier
                         .fillMaxWidth()
-                        .padding(end = 20.dp, bottom = 145.dp),
+                        .padding(end = 20.dp),
                         horizontalArrangement = Arrangement.End
                     ){
                         Text(text = "Don’t have an account?",
@@ -183,7 +183,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                     }
 
                     Row (modifier = Modifier.fillMaxWidth()
-                        .padding(top = 75.dp)){
+                        .padding(top = 105.dp)){
                         Card (colors = CardDefaults.cardColors(containerColor = Color(0xFFCF06F0)),
                             modifier = Modifier
                                 .width(130.dp)
