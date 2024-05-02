@@ -258,8 +258,8 @@ var pesquisaState = remember{
     }
 }
 
-@Preview
-@Composable
+//@Preview
+//@Composable
 fun TelaHomePreview() {
    //TelaHome()
 }

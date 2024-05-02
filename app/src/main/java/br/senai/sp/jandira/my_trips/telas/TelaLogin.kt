@@ -183,7 +183,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                     }
 
                     Row (modifier = Modifier.fillMaxWidth()
-                        .padding(top = 105.dp)){
+                        .padding(top = 165.dp)){
                         Card (colors = CardDefaults.cardColors(containerColor = Color(0xFFCF06F0)),
                             modifier = Modifier
                                 .width(130.dp)
