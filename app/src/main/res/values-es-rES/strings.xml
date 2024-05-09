@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">my_trips</string>
+    <string name="login">Acceso</string>
+    <string name="text">Inicia sesión para continuar</string>
+    <string name="email">correo electrónico</string>
+    <string name="password">contraseña</string>
+    <string name="sign_in">Acceso</string>
+    <string name="account">¿No tienes una cuenta?</string>
+    <string name="sign_up"> Registro</string>
+</resources>

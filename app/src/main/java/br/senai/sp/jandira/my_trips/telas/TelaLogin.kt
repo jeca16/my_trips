@@ -31,11 +31,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import br.senai.sp.jandira.my_trips.R
 
 @Composable
 fun TelaLogin(controleNavegacao: NavHostController) {
@@ -73,12 +75,12 @@ fun TelaLogin(controleNavegacao: NavHostController) {
             Column (horizontalAlignment = Alignment.Start,
                 modifier = Modifier.padding(top = 150.dp, start = 15.dp, bottom = 70.dp)
             ){
-                Text(text = "Login",
+                Text(text = stringResource(id = R.string.login),
                     color = Color(0xFFCF06F0),
                     fontWeight = FontWeight.Black,
                     fontSize = 45.sp
                 )
-                Text(text = "Please sign in to continue.",
+                Text(text = stringResource(id = R.string.text),
                     color = Color(0xFFA09C9C),
                     fontSize = 13.sp,
                     fontWeight = FontWeight.Light
@@ -97,7 +99,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                         .padding(20.dp)
                         .width(350.dp),
                     label = {
-                        Text(text = "E-mail",
+                        Text(text = stringResource(id = R.string.email),
                             fontWeight = FontWeight.Light
                         )
                     },
@@ -119,7 +121,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                         senhaState.value = it
                     },
                     label = {
-                        Text(text = "Password",
+                        Text(text = stringResource(id = R.string.password),
                             fontWeight = FontWeight.Light)
 
                     },
@@ -159,7 +161,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                             shape = RoundedCornerShape(15.dp),
 
                             ) {
-                            Text(text = "SIGN IN")
+                            Text(text = stringResource(id = R.string.sign_in))
                             Icon(imageVector = Icons.AutoMirrored.Filled.ArrowForward,
                                 contentDescription = "")
                         }
@@ -170,11 +172,11 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                         .padding(end = 20.dp),
                         horizontalArrangement = Arrangement.End
                     ){
-                        Text(text = "Don’t have an account?",
+                        Text(text = stringResource(id = R.string.account),
                             fontWeight = FontWeight.Light,
                             color = Color(0xFFA09C9C),
                             fontSize = 15.sp)
-                        Text(text = "Sign up",
+                        Text(text =  stringResource(id = R.string.sign_up),
                             color = Color(0xFFCF06F0),
                             fontWeight = FontWeight.Bold,
                             fontSize = 15.sp,
@@ -182,7 +184,8 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                         )
                     }
 
-                    Row (modifier = Modifier.fillMaxWidth()
+                    Row (modifier = Modifier
+                        .fillMaxWidth()
                         .padding(top = 165.dp)){
                         Card (colors = CardDefaults.cardColors(containerColor = Color(0xFFCF06F0)),
                             modifier = Modifier
