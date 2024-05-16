@@ -180,7 +180,7 @@ fun TelaLogin(controleNavegacao: NavHostController) {
                             color = Color(0xFFCF06F0),
                             fontWeight = FontWeight.Bold,
                             fontSize = 15.sp,
-                            modifier = Modifier.clickable { controleNavegacao.navigate("cadastro") }
+                            modifier = Modifier.clickable { controleNavegacao.navigate("Sign_in") }
                         )
                     }
 

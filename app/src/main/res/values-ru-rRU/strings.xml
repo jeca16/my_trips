@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">my_trips</string>
+    <string name="login">авторизоваться</string>
+    <string name="text">Пожалуйста, войдите, чтобы продолжить</string>
+    <string name="email">Электронная почта</string>
+    <string name="password">Пароль</string>
+    <string name="sign_in"> Войти</string>
+    <string name="account">У вас нет учетной записи?</string>
+    <string name="sign_up"> Зарегистрироваться</string>
+    <string name="new_account"> Создать новый аккаунт</string>
+    <string name="username"> Имя пользователя</string>
+    <string name="phone"> Телефон</string>
+    <string name="create"> СОЗДАТЬ АККАУНТ</string>
+    <string name="already_account"> У вас уже есть аккаунт?</string>
+    <string name="over"> Более 18</string>
+    <string name="location"> Ты в Париже</string>
+    <string name="categories"> Категории</string>
+    <string name="search"> Искать свою судьбу</string>
+    <string name="trips"> Прошлые поездки</string>
+</resources>

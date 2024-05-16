@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">my_trips</string>
+    <string name="login">登录</string>
+    <string name="text">请登录以继续</string>
+    <string name="email">电子邮件</string>
+    <string name="password">密码</string>
+    <string name="sign_in">登入</string>
+    <string name="account">没有帐户？</string>
+    <string name="sign_up"> 报名</string>
+    <string name="new_account"> 创建一个新账户</string>
+    <string name="username"> 用户名</string>
+    <string name="phone"> 电话</string>
+    <string name="create"> 创建帐户</string>
+    <string name="already_account"> 已经有帐户？</string>
+    <string name="over"> 年满18岁</string>
+    <string name="location"> 你在巴黎</string>
+    <string name="categories"> 类别</string>
+    <string name="search"> 寻找你的命运</string>
+    <string name="trips"> 过去的旅行</string>
+</resources>
+
+

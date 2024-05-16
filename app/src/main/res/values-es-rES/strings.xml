@@ -8,4 +8,14 @@
     <string name="sign_in">Acceso</string>
     <string name="account">¿No tienes una cuenta?</string>
     <string name="sign_up"> Registro</string>
+    <string name="new_account"> Crea una cuenta nueva</string>
+    <string name="username"> Username</string>
+    <string name="phone"> Teléfono</string>
+    <string name="create"> CREAR UNA CUENTA</string>
+    <string name="already_account"> ¿Ya tienes una cuenta?</string>
+    <string name="over"> Mayores de 18</string>
+    <string name="location"> Estás en París</string>
+    <string name="categories"> Categorías</string>
+    <string name="search"> Busca tu destino</string>
+    <string name="trips"> Viajes pasados</string>
 </resources>

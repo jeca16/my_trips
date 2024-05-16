@@ -36,6 +36,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -113,7 +114,7 @@ var pesquisaState = remember{
                         modifier = Modifier.size(20.dp)
                     )
                     Text(
-                        text = "You're in Paris",
+                        text = stringResource(id = R.string.location),
                         color = Color.White
                     )
                 }
@@ -133,7 +134,7 @@ var pesquisaState = remember{
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "Categories",
+                    text = stringResource(id = R.string.categories),
                     fontSize = 17.sp
                 )
                 val categorias = CategoriaRepositorio().listarTodasCategorias()
@@ -153,7 +154,9 @@ var pesquisaState = remember{
                             ) {
                                 Image(painter = if (it.icone == null) painterResource(id = R.drawable.novetor) else it.icone!!,
                                     contentDescription = "",
-                                    modifier = Modifier.width(35.dp).height(35.dp)
+                                    modifier = Modifier
+                                        .width(35.dp)
+                                        .height(35.dp)
                                 )
                                 Text(
                                     text = "${it.nome}",
@@ -176,7 +179,7 @@ var pesquisaState = remember{
                 },
                 modifier = Modifier.fillMaxWidth(),
                 placeholder = {
-                    Text(text = "Search your destiny",
+                    Text(text = stringResource(id = R.string.search),
                         color = Color(0xFF8B898B))
                 },
                 shape = RoundedCornerShape(25.dp),
@@ -195,8 +198,10 @@ var pesquisaState = remember{
                 .fillMaxWidth()
                 .padding(top = 20.dp)) {
 
-                Text(text = "Past trips",
-                    fontSize = 18.sp,)
+                Text(
+                    text = stringResource(id = R.string.trips),
+                    fontSize = 18.sp,
+                )
                 val viagens = ViagemRepositorio().listarTodasAsViagens()
 
                 LazyColumn{

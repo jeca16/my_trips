@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">my_trips</string>
+    <string name="login">se connecter</string>
+    <string name="text">Veuillez vous connecter pour continuer</string>
+    <string name="email">E-mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="sign_in">Se connecter</string>
+    <string name="account">Vous navez pas de compte ?</string>
+    <string name="sign_up"> Sinscrire</string>
+    <string name="new_account"> Créer un nouveau compte</string>
+    <string name="username"> Nom dutilisateur</string>
+    <string name="phone"> Téléphone</string>
+    <string name="create"> CRÉER UN COMPTE</string>
+    <string name="already_account">  Vous avez déjà un compte?</string>
+    <string name="over"> Plus de 18 ans</string>
+    <string name="location"> Vous êtes à Paris</string>
+    <string name="categories"> Catégories</string>
+    <string name="search"> Cherchez votre destin</string>
+    <string name="trips"> Voyages passés</string>
+</resources>

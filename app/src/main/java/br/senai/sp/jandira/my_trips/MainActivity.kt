@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
                     val controleNavegacao = rememberNavController()
                     NavHost(navController = controleNavegacao, startDestination = "login" ){
                         composable(route = "login"){ TelaLogin(controleNavegacao) }
-                        composable(route = "cadastro"){ TelaCadastro(controleNavegacao) }
+                        composable(route = "Sign_in"){ TelaCadastro(controleNavegacao) }
                         composable(route = "home"){ TelaHome(controleNavegacao) }
                     }
                 }

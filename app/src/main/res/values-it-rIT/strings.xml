@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> <string name="app_name">my_trips</string>
+    <string name="login">Login</string>
+    <string name="text">Accedi per continuare</string>
+    <string name="email">E-mail</string>
+    <string name="password">Parola dordine</string>
+    <string name="sign_in">Registrazione</string>
+    <string name="account">Non hai un account?</string>
+    <string name="sign_up"> Iscrizione</string>
+    <string name="new_account"> Creare un nuovo account</string>
+    <string name="username"> Nome utente</string>
+    <string name="phone"> Telefono</string>
+    <string name="create"> CREA UN ACCOUNT</string>
+    <string name="already_account"> Hai già un account?</string>
+    <string name="over"> Più di 18</string>
+    <string name="location"> Sei a Paris</string>
+    <string name="categories"> Categorie</string>
+    <string name="search"> Cerca il tuo destino</string>
+    <string name="trips"> Viaggi passati</string>
+</resources>
